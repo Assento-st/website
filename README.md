@@ -16,4 +16,6 @@ For a larger catalog, replace `catalog.json` through a controlled import from th
 
 The inquiry list is stored in the visitor's browser. The form prepares an email to `alexia@sitongjx.cn` or a WhatsApp message to `+8615732671342`; the visitor must send it in their email or WhatsApp app. There is no server-side RFQ record, staff notification, CRM integration, or delivery confirmation yet. Add a backend/API and consent policy before production use if reliable submission and follow-up tracking are required.
 
+The owner confirmed `alexia@sitongjx.cn` as the inquiry mailbox and selected English for the first release, with Chinese to follow. Confirm that the phone number is also the correct WhatsApp account before launch.
+
 An Amazon link can be enabled later in `app.js` after the store's exact URL and retail policies are verified. The current site intentionally has no checkout.
