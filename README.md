@@ -4,11 +4,11 @@ This is a static, responsive storefront prototype for a factory-direct inquiry b
 
 ## Run
 
-Serve this directory with any static HTTP server, for example `python3 -m http.server 8000` and open `http://localhost:8000`.
+Open `index.html` directly for a local preview, or serve this directory with any static HTTP server, for example `python3 -m http.server 8000` and open `http://localhost:8000`.
 
 ## Catalog
 
-`catalog.json` contains 635 distinct public product-list entries captured from 32 pages of `hebeibaifeng.com` on 2026-11-18. Each entry retains its original URL. The 635 corresponding public listing images are stored as optimized WebP files in `assets/`. Category, compatible brand, and model are inferred from titles and should be reviewed before launch. No dimensions, inventory, price, or certification claims are invented. Golf cart, off-road, premium, and custom seating are presented as inquiry pathways based on the owner's brief; no unverified stock listings are fabricated for them.
+`catalog.json` contains 635 distinct public product-list entries captured from 32 pages of `hebeibaifeng.com` on 2026-11-18. Each entry retains its original URL. `catalog-data.js` is generated from the same data for direct local-file previews, because browsers block `fetch()` from `file://` pages. Regenerate it whenever `catalog.json` changes: `python3 -c 'import json,pathlib; p=pathlib.Path("catalog.json"); pathlib.Path("catalog-data.js").write_text("window.BAIFENG_CATALOG = " + json.dumps(json.loads(p.read_text()), ensure_ascii=True, separators=(",", ":")) + ";\n")'`. The 635 corresponding public listing images are stored as optimized WebP files in `assets/`. Category, compatible brand, and model are inferred from titles and should be reviewed before launch. No dimensions, inventory, price, or certification claims are invented. Golf cart, off-road, premium, and custom seating are presented as inquiry pathways based on the owner's brief; no unverified stock listings are fabricated for them.
 
 For a larger catalog, replace `catalog.json` through a controlled import from the company's product system. Keep a stable product ID, family, compatibility brand, model, variant dimensions, media, and publication status. Do not create variant combinations until engineering confirms fit and availability.
 
