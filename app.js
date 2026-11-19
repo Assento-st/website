@@ -114,4 +114,4 @@ document.addEventListener('submit', event => {
 });
 document.addEventListener('click', async event => {if(event.target.id==='copy-inquiry'){try{await navigator.clipboard.writeText(window.preparedInquiry);announce('Inquiry text copied');}catch{announce('Copy unavailable in this browser');}}});
 window.addEventListener('popstate', render);
-fetch('catalog.json').then(r=>{if(!r.ok)throw new Error('Catalog unavailable');return r.json();}).then(items=>{state.products=items;render();}).catch(()=>{app.innerHTML='<div class="error-page"><h1>Catalog unavailable</h1><p>Please try again later or contact us directly at <a href="mailto:alexia@sitongjx.cn">alexia@sitongjx.cn</a>.</p></div>';});
+fetch('catalog.json?v=2').then(r=>{if(!r.ok)throw new Error('Catalog unavailable');return r.json();}).then(items=>{state.products=items;render();}).catch(()=>{app.innerHTML='<div class="error-page"><h1>Catalog unavailable</h1><p>Please try again later or contact us directly at <a href="mailto:alexia@sitongjx.cn">alexia@sitongjx.cn</a>.</p></div>';});
